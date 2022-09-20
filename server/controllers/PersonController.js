@@ -13,6 +13,12 @@ class PersonController {
         )
         return response.json(person)
     }
+
+    async destroy(request, response){
+        const { id } = request.params
+        const person = await Person.destroy({ where: { id } })
+        return response.status(204).json()
+    }
 }
 
 module.exports = PersonController

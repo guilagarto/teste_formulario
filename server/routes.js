@@ -11,5 +11,6 @@ router.get('/', (request, response) => {
 const personController = new PersonController()
 router.get('/people', personController.index)
 router.post('/people', personController.create)
+router.delete('/people/:id', personController.destroy)
 
 module.exports = router
