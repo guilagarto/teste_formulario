@@ -8,6 +8,8 @@ router.get('/', (request, response) => {
     return response.send({'message': 'hello'})
 })
 
-router.get('/people', new PersonController().index)
+const personController = new PersonController()
+router.get('/people', personController.index)
+router.post('/people', personController.create)
 
 module.exports = router
