@@ -1,4 +1,3 @@
-const { where } = require('sequelize')
 const Person = require('../models/Person')
 
 class PersonController {
