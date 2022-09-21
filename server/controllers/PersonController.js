@@ -1,3 +1,4 @@
+const { where } = require('sequelize')
 const Person = require('../models/Person')
 
 class PersonController {
@@ -23,6 +24,16 @@ class PersonController {
     async destroy(request, response){
         const { id } = request.params
         const person = await Person.destroy({ where: { id } })
+        return response.status(204).json()
+    }
+
+    async update(request, response){
+        const { firstName, lastName, email, phone, gender, about, address, image } = request.body;
+        const { id } = request.params
+        const person = await Person.update(
+            { firstName, lastName, email, phone, gender, about, address, image },
+            { where: { id } }
+        )
         return response.status(204).json()
     }
 }
