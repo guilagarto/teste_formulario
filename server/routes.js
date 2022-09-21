@@ -10,6 +10,7 @@ router.get('/', (request, response) => {
 
 const personController = new PersonController()
 router.get('/people', personController.index)
+router.get('/people/:id', personController.find)
 router.post('/people', personController.create)
 router.delete('/people/:id', personController.destroy)
 

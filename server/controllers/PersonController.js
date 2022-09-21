@@ -6,6 +6,12 @@ class PersonController {
         return response.json(people)
     }
 
+    async find(request, response){
+        const { id } = request.params
+        const person = await Person.findOne({ where: { id } })
+        return response.json(person)
+    }
+
     async create(request, response){
         const { firstName, lastName, email, phone, gender, about, address, image } = request.body;
         const person = await Person.create(
