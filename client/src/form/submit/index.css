@@ -1,0 +1,14 @@
+button.submit {
+    width: 100%;
+    color: blue;
+    border-color: blue;
+    background-color: aliceblue;
+    padding: 12px 20px;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+button.submit:hover {
+    color: aliceblue;
+    background-color: blue;
+}
