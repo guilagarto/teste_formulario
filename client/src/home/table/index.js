@@ -17,8 +17,9 @@ function TableComponent(){
     }, [])
       
     return <Table>
-        <thead>
+        <thead className="table-active">
             <tr>
+                <th>N°</th>
                 <th>Nome</th>
                 <th>Sobrenome</th>
                 <th>E-mail</th>
@@ -31,8 +32,9 @@ function TableComponent(){
             </tr>
         </thead>
         <tbody> 
-            { people.map(person => 
+            { people.map((person, idx) => 
                 <tr key={person.id}>
+                    <td>{idx + 1}</td>
                     <td>{person.firstName}</td>
                     <td>{person.lastName}</td>
                     <td>{person.email}</td>
