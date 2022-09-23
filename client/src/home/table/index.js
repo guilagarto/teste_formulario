@@ -41,11 +41,19 @@ function TableComponent(){
                     <td>{person.about}</td>
                     <td>{person.address}</td>
                     <td>{person.image}</td>
-                    <td><Button variant="outline-danger">Excluir</Button></td>
+                    <td><Button variant="outline-danger" onClick={deletePerson(person.id)}>Excluir</Button></td>
                 </tr>
             )}
         </tbody>
     </Table>
+}
+
+const deletePerson = id => () => {
+    fetch(`http://localhost:3001/people/${id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+    })
+    window.location.reload();
 }
 
 export default TableComponent
