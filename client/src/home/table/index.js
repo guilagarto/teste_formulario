@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import './index.css'
+import { Table, Button } from 'react-bootstrap'
 
-function Table(){    
+function TableComponent(){    
     const [ people, setPeople ] = useState([])
 
     useEffect(()=>{
@@ -16,7 +16,7 @@ function Table(){
         });
     }, [])
       
-    return <table border='1'>
+    return <Table>
         <thead>
             <tr>
                 <th>Nome</th>
@@ -41,12 +41,11 @@ function Table(){
                     <td>{person.about}</td>
                     <td>{person.address}</td>
                     <td>{person.image}</td>
-                    <td><button>Excluir</button></td>
+                    <td><Button variant="outline-danger">Excluir</Button></td>
                 </tr>
             )}
         </tbody>
-        
-    </table>
+    </Table>
 }
 
-export default Table
+export default TableComponent

@@ -1,15 +1,15 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from './home';
-import Form from './form';
-import './App.css';
+import FormComponent from './form';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <BrowserRouter>
         <Routes>
             <Route element = { <Home /> }  path="/" exact />
-            <Route element = { <Form /> }  path="/cadastro" />
+            <Route element = { <FormComponent /> }  path="/cadastro" />
         </Routes>
       </BrowserRouter>
     </div>

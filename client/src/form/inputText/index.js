@@ -1,13 +1,11 @@
-import './index.css'
+import Form from 'react-bootstrap/Form'
 
 function InputText(props){
     return (
-        <div className="input">
-            <label>
-                { props.title + ":" }
-                <input type="text" />
-            </label>
-        </div>
+        <Form.Group className='mb-3'>
+            <Form.Label>{ props.title + ':' }</Form.Label>
+            <Form.Control id={props.id} type={ props.type || 'text' } />
+        </Form.Group>
     );
 }
 
