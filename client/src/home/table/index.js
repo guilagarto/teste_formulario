@@ -27,6 +27,7 @@ function Table(){
                 <th>Biografia</th>
                 <th>Endereço</th>
                 <th>Url Imagem</th>
+                <th>Excluir</th>
             </tr>
         </thead>
         <tbody> 
@@ -40,6 +41,7 @@ function Table(){
                     <td>{person.about}</td>
                     <td>{person.address}</td>
                     <td>{person.image}</td>
+                    <td><button>Excluir</button></td>
                 </tr>
             )}
         </tbody>
