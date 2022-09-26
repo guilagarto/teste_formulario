@@ -29,8 +29,10 @@ function TableComponent(){
                 <th>Excluir</th>
             </tr>
         </thead>
-        <tbody> 
-            { people.map((person, idx) => 
+        <tbody> { 
+            people.length === 0 
+            ? <tr><td>Sem registros</td></tr> 
+            : people.map((person, idx) => 
                 <tr key={person.id}>
                     <td>{idx + 1}</td>
                     <td>{person.firstName}</td>
@@ -44,8 +46,8 @@ function TableComponent(){
                     <td><a className="btn btn-outline-primary" href={`/cadastro/${person.id}`}>Editar</a></td>
                     <td><Button variant="outline-danger" onClick={deletePerson(person.id)}>Excluir</Button></td>
                 </tr>
-            )}
-        </tbody>
+            )
+        } </tbody>
     </Table>
 }
 
