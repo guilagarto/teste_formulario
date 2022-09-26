@@ -12,13 +12,21 @@ function Submit(props){
             address: document.getElementById('address').value,
             image: document.getElementById('image').value
         }
-        sendData({ 
-            url: props.action,
-            method: props.method,
-            data: requestBody
-        })
-        .then(response => console.log(response))
-        window.location.href = "/";
+        if (
+            !requestBody.firstName || 
+            !requestBody.lastName || 
+            !requestBody.email || 
+            !requestBody.phone || 
+            !requestBody.gender 
+        ) alert('Preencha os campos obrigatórios (*).')
+        else {
+            sendData({ 
+                url: props.action,
+                method: props.method,
+                data: requestBody
+            })
+            window.location.href = "/";
+        }
     }
 
     return <Button onClick={registerPerson}>{ props.title }</Button>

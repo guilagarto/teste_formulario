@@ -6,11 +6,11 @@ function FormComponent() {
   return (<>
     <h1>Cadastro de Pessoa</h1>
     <Form>
-      <InputText id="firstName" title="Nome"/>
-      <InputText id="lastName" title="Sobrenome"/>
-      <InputText id="email" title="E-mail" type="email"/>
-      <InputText id="phone" title="Telefone"/>
-      <InputText id="gender" title="Gênero"/>
+      <InputText id="firstName" title="* Nome" required/>
+      <InputText id="lastName" title="* Sobrenome"/>
+      <InputText id="email" title="* E-mail" type="email"/>
+      <InputText id="phone" title="* Telefone"/>
+      <InputText id="gender" title="* Gênero"/>
       <InputText id="about" title="Biografia"/>
       <InputText id="address" title="Endereço"/>
       <InputText id="image" title="Url Imagem"/>
