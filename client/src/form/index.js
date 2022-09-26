@@ -14,7 +14,7 @@ function FormComponent() {
       <InputText id="about" title="Biografia"/>
       <InputText id="address" title="Endereço"/>
       <InputText id="image" title="Url Imagem"/>
-      <Submit title="Enviar"/>
+      <Submit action="http://localhost:3001/people" method="POST" title="Enviar"/>
     </Form>
   </>);
 }

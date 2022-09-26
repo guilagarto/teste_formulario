@@ -7,10 +7,7 @@ function TableComponent(){
     useEffect(()=>{
         fetch('http://localhost:3001/people')
         .then(data => data.json())
-        .then(person => {
-            console.log(person)
-            setPeople(person);
-        })
+        .then(person => { setPeople(person) })
         .catch(() => {
             alert('Erro', 'Não foi possível carregar os dados.');
         });
@@ -28,6 +25,7 @@ function TableComponent(){
                 <th>Biografia</th>
                 <th>Endereço</th>
                 <th>Url Imagem</th>
+                <th>Editar</th>
                 <th>Excluir</th>
             </tr>
         </thead>
@@ -43,6 +41,7 @@ function TableComponent(){
                     <td>{person.about}</td>
                     <td>{person.address}</td>
                     <td>{person.image}</td>
+                    <td><a className="btn btn-outline-primary" href={`/cadastro/${person.id}`}>Editar</a></td>
                     <td><Button variant="outline-danger" onClick={deletePerson(person.id)}>Excluir</Button></td>
                 </tr>
             )}
