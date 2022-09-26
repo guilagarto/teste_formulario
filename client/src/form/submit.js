@@ -9,8 +9,7 @@ function Submit(props){
             phone: document.getElementById('phone').value,
             gender: document.getElementById('gender').value,
             about: document.getElementById('about').value,
-            address: document.getElementById('address').value,
-            image: document.getElementById('image').value
+            address: document.getElementById('address').value
         }
         if (
             !requestBody.firstName || 

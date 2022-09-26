@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
-import InputText from '../inputText';
+import InputComponent from '../input';
 import Submit from '../submit';
 
 function EditPerson() {
@@ -22,14 +22,14 @@ function EditPerson() {
   return (<>
     <h1>Editar Cadastro de Pessoa</h1>
     <Form>
-      <InputText value={person.firstName} id="firstName" title="Nome"/>
-      <InputText value={person.lastName} id="lastName" title="Sobrenome"/>
-      <InputText value={person.email} id="email" title="E-mail" type="email"/>
-      <InputText value={person.phone} id="phone" title="Telefone"/>
-      <InputText value={person.gender} id="gender" title="Gênero"/>
-      <InputText value={person.about} id="about" title="Biografia"/>
-      <InputText value={person.address} id="address" title="Endereço"/>
-      <InputText value={person.image} id="image" title="Url Imagem"/>
+      <InputComponent value={person.firstName} id="firstName" title="Nome"/>
+      <InputComponent value={person.lastName} id="lastName" title="Sobrenome"/>
+      <InputComponent value={person.email} id="email" title="E-mail" type="email"/>
+      <InputComponent value={person.phone} id="phone" title="Telefone"/>
+      <InputComponent value={person.gender} id="gender" title="Gênero"/>
+      <InputComponent value={person.about} id="about" title="Biografia"/>
+      <InputComponent value={person.address} id="address" title="Endereço"/>
+      <InputComponent value={person.image} id="image" title="Url Imagem" type="file"/>
       <Submit action={`http://localhost:3001/people/${personId}`} method="PUT" title="Enviar"/>
     </Form>
   </>);

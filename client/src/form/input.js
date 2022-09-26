@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form'
 
-function InputText(props){
+function InputComponent(props){
     const [value, setValue ] = useState()
     function handleChange(event){
         setValue(event.target.value)
@@ -20,4 +20,4 @@ function InputText(props){
     );
 }
 
-export default InputText
+export default InputComponent

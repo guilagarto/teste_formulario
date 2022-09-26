@@ -29,7 +29,7 @@ function TableComponent(){
                 <th>Excluir</th>
             </tr>
         </thead>
-        <tbody> { 
+        <tbody>{ 
             people.length === 0 
             ? <tr><td>Sem registros</td></tr> 
             : people.map((person, idx) => 
@@ -47,7 +47,7 @@ function TableComponent(){
                     <td><Button variant="outline-danger" onClick={deletePerson(person.id)}>Excluir</Button></td>
                 </tr>
             )
-        } </tbody>
+        }</tbody>
     </Table>
 }
 
